@@ -1,4 +1,5 @@
 import random
+import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -30,11 +31,13 @@ def check_key_page(random_number):
       print(f"Balance is 0 :(: {random_number}")
     else:
       print(f"OMG!!! DID YOU FIND GOLD? OPEN PAGE: {random_number}")
+      while True:
+          os.system(f"afplay /System/Library/Sounds/Funk.aiff")
   finally:
     driver.quit()
 
-# Example usage: Search for the HTML 10 times
-for _ in range(200):
+# Search for the HTML 400 times
+for _ in range(400):
   random_number = generate_random_number()
   try:
     check_key_page(random_number)
